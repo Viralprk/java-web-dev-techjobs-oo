@@ -71,13 +71,10 @@ public class JobTest {
     @Test
     public void testEmptyData() {
         //No Employer pass
-        Job cvsJob1 = new Job("ABC",new Employer(),
+        Job cvsJob1 = new Job("ABC",new Employer(""),
                 new Location("STL"),new PositionType("Pharmacist"),
                 new CoreCompetency("chemist"));
         assertTrue(cvsJob1.toString().contains("Employer :Data not available\n"));
     }
-
-
-
 
 }

@@ -98,46 +98,16 @@ public class Job {
 
     @Override
     public String toString() {
-        String noData = "Data not available";
-        String finalString = "";
-
-        ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
-
-        HashMap<String, String> idField = new HashMap<String, String>();
-        idField.put("ID :", Integer.toString(this.id));
-        list.add(idField);
-
-        HashMap<String, String> nameFields = new HashMap<String, String>();
-        nameFields.put("Name :", this.getName() != null ?this.getName():noData);
-        list.add(nameFields);
-
-        HashMap<String, String> empFields = new HashMap<String, String>();
-        empFields.put("Employer :", this.employer.toString() != null?this.employer.toString():noData);
-        list.add(empFields);
-
-        HashMap<String, String> locationFields = new HashMap<String, String>();
-        locationFields.put("Location :", this.location.toString() != null?this.location.toString():noData);
-        list.add(locationFields);
-
-        HashMap<String, String> positionTypeFields = new HashMap<String, String>();
-        positionTypeFields.put("Position Type :", this.positionType.toString()!= null?this.positionType.toString():noData);
-        list.add(positionTypeFields);
-
-        HashMap<String, String> coreCompetencyFields = new HashMap<String, String>();
-        coreCompetencyFields.put("Core Competency :", this.getCoreCompetency().toString()!= null?this.getCoreCompetency().toString():noData);
-        list.add(coreCompetencyFields);
-
-
-
-        for (int i = 0; i < list.size(); i++) {
-            HashMap<String, String> data = list.get(i);
+            String noData = "Data not available";
+            String finalString = "";
             finalString =  finalString + "\n";
-            for (Map.Entry<String, String> entry : data.entrySet()) {
-                String key = entry.getKey();
-                String value = entry.getValue();
-                finalString =  finalString + key + value;
-            }
-        }
+            finalString =  finalString +  "ID :"+ Integer.toString(this.id) + "\n";
+            finalString =  finalString +  "Name :"+ (this.getName() != null ?this.getName():noData) +"\n";
+          // finalString =  finalString +  "Employer :" + (this.employer.toString().length()>0?this.employer.toString():noData) +"\n";
+            finalString =  finalString +  "Employer :" + (this.getEmployer().toString().length()>0?this.getEmployer().toString():noData) +"\n";
+            finalString =  finalString +  "Location :" + (this.getLocation().toString().length()>0?this.getLocation().toString():noData) +"\n";
+            finalString =  finalString +  "Position Type :"+ (this.getPositionType().toString().length()>0?this.getPositionType().toString():noData) +"\n";
+            finalString =  finalString +  "Core Competency :"+ (this.getCoreCompetency().toString().length()>0?this.getCoreCompetency().toString():noData) +"\n";
 
         return  finalString;
     }
