@@ -75,13 +75,23 @@ public class JobTest {
                 new Location("STL"),new PositionType("Pharmacist"),
                 new CoreCompetency("chemist"));
 
-        assertEquals(cvsJob1.toString(),"\n" +
-                "ID :3\n" +
-                "Name :ABC\n" +
-                "Employer :CVS\n" +
-                "Location :STL\n" +
-                "Position Type :Pharmacist\n" +
-                "Core Competency :chemist\n");
+        String response = cvsJob1.toString();
+        int n =response.length();
+        char first = response.charAt(0);
+        char last = response.charAt(n - 1);
+        assertTrue(first == '\n');
+        assertTrue(last == '\n');
+
+//        assertEquals(response.indexOf("\n",0),0);
+//        assertEquals(response.indexOf("\n",response.length()-1),95);
+//
+//        assertEquals(cvsJob1.toString(),"\n" +
+//                "ID :3\n" +
+//                "Name :ABC\n" +
+//                "Employer :CVS\n" +
+//                "Location :STL\n" +
+//                "Position Type :Pharmacist\n" +
+//                "Core Competency :chemist\n");
     }
 
     @Test
